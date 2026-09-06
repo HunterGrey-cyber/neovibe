@@ -1,0 +1,4 @@
+[submodule "neovide"]
+	path = neovide
+	url = https://github.com/HunterGrey-cyber/neovide.git
+	branch = neovibe-integration
