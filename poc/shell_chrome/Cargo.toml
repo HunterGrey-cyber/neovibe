@@ -1,0 +1,8 @@
+[package]
+name = "shell_chrome"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+gtk4 = { version = "0.11", features = ["v4_12"] }

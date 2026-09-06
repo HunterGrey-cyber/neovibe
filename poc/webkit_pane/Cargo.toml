@@ -1,0 +1,17 @@
+[package]
+name = "webkit_pane"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+# GTK4 bindings (gtk-rs project). Matches the system gtk4 (4.22.4) headers.
+# `v4_18` (well below the installed 4.22) is enabled because webkit6's
+# generated WebView bindings reference `gtk4::Accessible`, which gtk4 itself
+# only compiles in behind its `v4_10`+ feature gate.
+gtk4 = { version = "0.11", features = ["v4_18"] }
+# webkit6 = gtk-rs bindings for WebKitGTK's GTK4-targeted API (pkg-config name
+# `webkitgtk-6.0`, distinct from the older GTK3-oriented `webkit2gtk-4.1`).
+# Verified on crates.io/docs.rs: gtk-rs project, MIT, depends on gtk4 ^0.11,
+# which matches the gtk4 crate pinned above.
+webkit6 = "0.6"
